@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::get('home', 'Admin@home');
 Route::post('insert', 'Admin@insert');
+Route::get('view','Admin@view');

@@ -18,11 +18,16 @@ class Admin extends Controller
     	$email = $request->get('email');
 
     	$userdata=array(
-            "name"=>$email,
-            "email"=>$name
+            "name"=>$name,
+            "email"=>$email
         );
 
         DB::table('users')->insert($userdata);
          return redirect('/home');
+    }
+    public function view(){
+        $data=DB::table('users')->get();
+        return view('google',['data'=>$data]);
+        //print_r($data);
     }
 }
